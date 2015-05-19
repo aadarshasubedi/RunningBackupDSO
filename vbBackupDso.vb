@@ -1,4 +1,3 @@
-```vb
 
 Imports System.Globalization
 Imports System.IO
