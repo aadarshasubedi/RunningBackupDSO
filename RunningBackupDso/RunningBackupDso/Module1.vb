@@ -5,6 +5,10 @@ Module Module1
     Private sDestPath As String, sFolderPrMth As String, checkFolder As String
     ''sDestPath descrive il percorso per il salvataggio dinamico della cartella di backup
     ''sFolderPrMth descrive il percorso della cartella fonte
+    ''' <summary>
+    ''' used to clean up folder after backup
+    ''' </summary>
+    ''' <remarks></remarks>
     Sub Main()
 
         Try
