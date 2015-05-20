@@ -15,8 +15,8 @@ Module Module1
             Call BaiDsoBackup()
             Call BbmiDsoBackup()
         Catch ex As Exception
-            Console.WriteLine("Interruzione App. causa errore seguente >>> - {0} -----{1}", ex.ToString, _
-                                                                            "Contattare maCR@ris...)
+            Console.WriteLine("Interruzione App. causa errore seguente >>> - {0} -----{1}", ex.Message, _
+                                                 vbNewLine & vbNewLine & "Contattare maCR@ris...")
             Console.ReadLine()
         End Try
 
