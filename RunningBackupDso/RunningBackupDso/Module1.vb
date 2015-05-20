@@ -12,6 +12,14 @@ Module Module1
     Sub Main()
 
         Try
+
+            If Not Environ("username").ToUpper = "******" Then
+                Console.WriteLine("Spiacente! non sei @ris" & vbNewLine & "Interruzione App...")
+                Console.WriteLine(vbNewLine & vbNewLine)
+                Console.WriteLine("Tu sei {0} <<<>>>> Buona Giornata!", Environ("username"))
+                Console.ReadLine()
+                Exit Sub
+            End If
             Call BaiDsoBackup()
             Call BbmiDsoBackup()
         Catch ex As Exception
