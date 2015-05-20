@@ -11,7 +11,8 @@ Module Module1
             Call BaiDsoBackup()
             Call BbmiDsoBackup()
         Catch ex As Exception
-
+            Console.WriteLine("something occured - {0}", ex.Message)
+            Console.ReadLine()
         End Try
 
 
