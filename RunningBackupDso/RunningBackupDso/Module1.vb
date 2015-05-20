@@ -11,7 +11,8 @@ Module Module1
             Call BaiDsoBackup()
             Call BbmiDsoBackup()
         Catch ex As Exception
-            Console.WriteLine("something occured - {0}", ex.Message)
+            Console.WriteLine("Interruzione App. causa errore seguente >>> - {0} -----{1}", ex.Message, _
+                                                                            "Contattare maCR@ris...)
             Console.ReadLine()
         End Try
 
@@ -28,7 +29,7 @@ Module Module1
         checkFolder = "BAI_Macro_" _
                 & sdhLastDayInMonth(Now())
         ' '''Esegue verifca presenza file di backup creato con task scheduler tutti 3o lunedi, martedi, mercoledi del mese
-        Dim Cartella_scr As String = Environ("UserProfile") & "\Desktop\BAI_Current_Month\BAI_Archive\"
+        Dim Cartella_scr As String = "T:\Aristide_Lapa\MacrAris\Bai_Current_Month\BAI_Archive\"
 
         If VerificaFolder(checkFolder, Cartella_scr) Then '= True Then
             Exit Sub
