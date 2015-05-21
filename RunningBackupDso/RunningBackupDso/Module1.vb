@@ -30,7 +30,7 @@ Module Module1
 
 
     End Sub
-
+'''\\bbmi01\comune\Aristide_Lapa
     Sub BaiDsoBackup()
         sDestPath = "T:\Aristide_Lapa\MacrAris\Bai_Current_Month\BAI_Archive\BAI_Macro_" _
                     & sdhLastDayInMonth(Now()) _
