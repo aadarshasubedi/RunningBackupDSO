@@ -1,7 +1,9 @@
 ﻿Imports System.Globalization
 Imports System.IO
+Imports System.Security
 
 Module Module1
+
     Private sDestPath As String, sFolderPrMth As String, checkFolder As String
     ''sDestPath descrive il percorso per il salvataggio dinamico della cartella di backup
     ''sFolderPrMth descrive il percorso della cartella fonte
@@ -12,8 +14,13 @@ Module Module1
     Sub Main()
 
         Try
+            Dim fullTrust As New PermissionSet(Permissions.PermissionState.Unrestricted)
+            fullTrust.Demand()
 
-            If Not Environ("username").ToUpper = "******" Then
+            'ChDrive("T")
+            'ChDir("T:\Aristide_Lapa\MacrAris")
+
+            If Not Environ("username").ToUpper = "KWEMARIT" Then
                 Console.WriteLine("Spiacente! non sei @ris" & vbNewLine & "Interruzione App...")
                 Console.WriteLine(vbNewLine & vbNewLine)
                 Console.WriteLine("Tu sei {0} <<<>>>> Buona Giornata!", Environ("username"))
@@ -22,6 +29,9 @@ Module Module1
             End If
             Call BaiDsoBackup()
             Call BbmiDsoBackup()
+            ChDrive("C")
+            Console.WriteLine("done")
+            Console.ReadLine()
         Catch ex As Exception
             Console.WriteLine("Interruzione App. causa errore seguente >>> - {0} -----{1}", ex.Message, _
                                                  vbNewLine & vbNewLine & "Contattare maCR@ris...")
@@ -30,8 +40,10 @@ Module Module1
 
 
     End Sub
-'''\\bbmi01\comune\Aristide_Lapa
+
     Sub BaiDsoBackup()
+
+
         sDestPath = "T:\Aristide_Lapa\MacrAris\Bai_Current_Month\BAI_Archive\BAI_Macro_" _
                     & sdhLastDayInMonth(Now()) _
                         & "_Backup_" & Format(Now, "yyyy-MM-dd_hh-mm-ss")
