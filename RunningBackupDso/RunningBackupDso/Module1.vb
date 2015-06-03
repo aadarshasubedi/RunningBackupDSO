@@ -20,13 +20,13 @@ Module Module1
             'ChDrive("T")
             'ChDir("T:\Aristide_Lapa\MacrAris")
 
-            If Not Environ("username").ToUpper = "KWEMARIT" Then
-                Console.WriteLine("Spiacente! non sei @ris" & vbNewLine & "Interruzione App...")
-                Console.WriteLine(vbNewLine & vbNewLine)
-                Console.WriteLine("Tu sei {0} <<<>>>> Buona Giornata!", Environ("username"))
-                Console.ReadLine()
-                Exit Sub
-            End If
+            'If Not Environ("username").ToUpper = "KWEMARIT" Then
+            '    Console.WriteLine("Spiacente! non sei @ris" & vbNewLine & "Interruzione App...")
+            '    Console.WriteLine(vbNewLine & vbNewLine)
+            '    Console.WriteLine("Tu sei {0} <<<>>>> Buona Giornata!", Environ("username"))
+            '    Console.ReadLine()
+            '    Exit Sub
+            'End If
             Call BaiDsoBackup()
             Call BbmiDsoBackup()
             ChDrive("C")
@@ -44,16 +44,16 @@ Module Module1
     Sub BaiDsoBackup()
 
 
-        sDestPath = "T:\Aristide_Lapa\MacrAris\Bai_Current_Month\BAI_Archive\BAI_Macro_" _
+        sDestPath = "\\bbmi01\Comune\Aristide_Lapa\MacrAris\Bai_Current_Month\BAI_Archive\BAI_Macro_" _
                     & sdhLastDayInMonth(Now()) _
                         & "_Backup_" & Format(Now, "yyyy-MM-dd_hh-mm-ss")
 
-        sFolderPrMth = "T:\Aristide_Lapa\MacrAris\Bai_Current_Month\BAI_Macro\"
+        sFolderPrMth = "\\bbmi01\Comune\Aristide_Lapa\MacrAris\Bai_Current_Month\BAI_Macro\"
 
         checkFolder = "BAI_Macro_" _
                 & sdhLastDayInMonth(Now())
         ' '''Esegue verifca presenza file di backup creato con task scheduler tutti 3o lunedi, martedi, mercoledi del mese
-        Dim Cartella_scr As String = "T:\Aristide_Lapa\MacrAris\Bai_Current_Month\BAI_Archive\"
+        Dim Cartella_scr As String = "\\bbmi01\Comune\Aristide_Lapa\MacrAris\Bai_Current_Month\BAI_Archive\"
 
         If VerificaFolder(checkFolder, Cartella_scr) Then '= True Then
             Exit Sub
@@ -89,16 +89,16 @@ Module Module1
 
     Sub BbmiDsoBackup()
 
-        sDestPath = "T:\Aristide_Lapa\MacrAris\Bbmi_Current_Month\BBMI_Archive\BBMI_Macro_" _
+        sDestPath = "\\bbmi01\Comune\Aristide_Lapa\MacrAris\Bbmi_Current_Month\BBMI_Archive\BBMI_Macro_" _
                             & sdhLastDayInMonth(Now()) _
                                     & "_Backup_" & Format(Now, "yyyy-MM-dd_hh-mm-ss")
 
-        sFolderPrMth = "T:\Aristide_Lapa\MacrAris\Bbmi_Current_Month\BBMI_Macro\"
+        sFolderPrMth = "\\bbmi01\Comune\Aristide_Lapa\MacrAris\Bbmi_Current_Month\BBMI_Macro\"
 
         checkFolder = "BBMI_Macro_" _
                 & sdhLastDayInMonth(Now())
 
-        Dim Cartella_scr As String = "T:\Aristide_Lapa\MacrAris\Bbmi_Current_Month\BBMI_Archive\"
+        Dim Cartella_scr As String = "\\bbmi01\Comune\Aristide_Lapa\MacrAris\Bbmi_Current_Month\BBMI_Archive\"
 
         If VerificaFolder(checkFolder, Cartella_scr) Then '= True Then
             Exit Sub
